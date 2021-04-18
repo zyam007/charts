@@ -1,6 +1,6 @@
 # Display Data from csv file
 
-## Projects is deployed here:
+## Projects is deployed here: [Chart Link](https://chart-pie-bars.netlify.app).
 
 ## Description
 
