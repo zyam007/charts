@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { VictoryPie, VictoryLabel } from 'victory';
 
 const colorData = ['#FF9505', '#EC4E20', '#016FB9', '#7ee081', '#c3f3c0'];
+//for animation of Pie Chart
 const defaultData = [
-  { Genre: 'Sports', Views: 0 },
-  { Genre: 'Science Fiction', Views: 0 },
-  { Genre: 'Mystery', Views: 500 },
+  { Genre: '', Views: 0 },
+  { Genre: '', Views: 0 },
+  { Genre: '', Views: 500 },
 ];
 
 export default function PieChart({ city, cityName }) {
@@ -19,7 +20,7 @@ export default function PieChart({ city, cityName }) {
   return (
     <div className="text-center">
       <h6 className="views-line">
-        Views in <b>{cityName}</b> by Genre
+        Views in <b>{cityName}</b>
       </h6>
       <VictoryPie
         animate={{

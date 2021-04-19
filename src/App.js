@@ -5,16 +5,27 @@ import './App.css';
 import Chart from './components/Chart';
 import Header from './components/Header';
 
+const filteredValue = 'Viewer Hometown';
+/*
+
+Or can filter by these values instead of hometown
+
+const filteredValue = 'Program Network';
+const filteredValue = 'Program Genre';
+const filteredValue = 'Program Title';
+
+*/
+
 export default function App() {
-  const [cityGroups, setCityGroups] = useState({});
+  const [groups, setGroups] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     //load data from cvs file
     async function fetchData() {
       const info = await d3.csv('/allData.csv');
-      const groups = d3.group(info, (d) => d['Viewer Hometown']);
-      setCityGroups(groups);
+      const group = d3.group(info, (d) => d[filteredValue]);
+      setGroups(group);
       setLoading(false);
     }
     fetchData();
@@ -24,7 +35,7 @@ export default function App() {
     <div className="landing">
       <Header />
       <div className="mainContainer">
-        {!loading && <Chart cityGroups={cityGroups} />}
+        {!loading && <Chart groups={groups} />}
       </div>
     </div>
   );

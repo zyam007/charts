@@ -5,8 +5,19 @@ import BarChart from './BarChart';
 import PieChart from './PieChart';
 import './Chart.css';
 
-export default function Chart({ cityGroups }) {
-  const [singleCity, setSingleCity] = useState('');
+const category = 'Program Genre';
+/*
+
+Other possible filter values
+
+const category = 'Program Network';
+const category = 'Viewer Hometown';
+const category = 'Program Title';
+
+*/
+
+export default function Chart({ groups }) {
+  const [singleGroup, setSingleGroup] = useState('');
   const [loadChart, setLoadChart] = useState(false);
   const [barState, setBarState] = useState(false);
   const [pieState, setPieState] = useState(false);
@@ -15,7 +26,7 @@ export default function Chart({ cityGroups }) {
 
   useEffect(() => {
     //get all cities names
-    const allCityNames = Array.from(cityGroups.keys());
+    const allCityNames = Array.from(groups.keys());
     setCityNames(allCityNames);
   }, []);
 
@@ -30,13 +41,13 @@ export default function Chart({ cityGroups }) {
     setPieState(!pieState);
   }
   function handlePickCity(pickedCity) {
-    setSingleCity(pickedCity);
+    setSingleGroup(pickedCity);
     //calculate views for selected city by genre
     const oneCity = d3
       .rollups(
-        cityGroups.get(pickedCity),
+        groups.get(pickedCity),
         (xs) => d3.sum(xs, (x) => x['Number of Viewers']),
-        (d) => d['Program Genre']
+        (d) => d[category]
       )
       .map(([k, v]) => ({ Genre: k, Views: v }));
     setCityData(oneCity);
@@ -65,10 +76,10 @@ export default function Chart({ cityGroups }) {
         </div>
       )}
       {barState && loadChart && (
-        <BarChart city={cityData} cityName={singleCity} />
+        <BarChart city={cityData} cityName={singleGroup} />
       )}
       {pieState && loadChart && (
-        <PieChart city={cityData} cityName={singleCity} />
+        <PieChart city={cityData} cityName={singleGroup} />
       )}
     </div>
   );

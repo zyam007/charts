@@ -3,9 +3,9 @@ import { VictoryBar, VictoryChart, VictoryLabel } from 'victory';
 
 export default function BarChart({ city, cityName }) {
   return (
-    <div className="mt-4">
+    <div>
       <h6 className="views-line text-center">
-        Views in <b>{cityName}</b> by Genre
+        Views in <b>{cityName}</b>
       </h6>
       <VictoryChart
         className="victoryContainer"
