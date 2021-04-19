@@ -20,6 +20,12 @@ Buttons rendered with React-Bootstrap
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Sample Screenshots
+
+<img width="400" alt="views by genre in cities" src="https://user-images.githubusercontent.com/13999167/115264440-4d138c80-a104-11eb-87fc-51cb9bdfaa83.png">
+<img width="400" alt="views by network in cities" src="https://user-images.githubusercontent.com/13999167/115264479-54d33100-a104-11eb-9fc1-83c39eec5d21.png">
+<img width="400" alt="views by program by cities" src="https://user-images.githubusercontent.com/13999167/115264488-569cf480-a104-11eb-9a05-902c6e600031.png">
+
 ## How To Use
 
 From your command line, first clone this repository:
