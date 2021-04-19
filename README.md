@@ -4,10 +4,13 @@
 
 ## Description
 
-You can view Bar Chart and Pie Chart for specific city from CSV file
-Cities' names colllected from csv file and data is displayed according to city name
+Displaying Bar Chart and Pie Chart for specific city from CSV file.
+
+Cities' names colllected from csv file and data is displayed according to city name.
+
 Option to change filter values in the code.
-For examples to filter by Network or Program, etc
+
+For examples to filter by Network or Program, etc..
 
 ## Technologies used:
 
