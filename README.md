@@ -11,9 +11,9 @@ For examples to filter by Network or Program, etc
 
 ## Technologies used:
 
-Data parsing was done with D3.js and visualization was done with Victory.js
+Data parsing, calculations were done with D3.js and visualization was done with Victory.js
 
-Buttons rendered with React-Bootstrap and some styles with bootstrap
+Buttons rendered with React-Bootstrap
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
